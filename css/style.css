@@ -1,0 +1,11 @@
+#gameCanvas {
+  /*height: 500px;
+  width: 1000px;*/
+  background-color: black;
+}
+
+#lecturer1 {
+  height: 50px;
+  width: 50px;
+  transform: rotate(90deg);
+}
