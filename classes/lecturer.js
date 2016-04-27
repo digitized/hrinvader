@@ -1,22 +1,21 @@
 var Lecturer = function(image, posx, posy, height, width){
   EntityImage.call(this, image, posx, posy, height, width);
-  this.posY = 130;
-  this.posX = 150;
+  this.speed = 20;
 }
 Lecturer.prototype = Object.create(EntityImage.prototype);
 Lecturer.prototype.constructor = Lecturer;
 Lecturer.prototype.moveLeft = function(){
   if( this.posX > 0 )
-    this.posX -= 2;
+    this.posX -= this.speed;
 }
 Lecturer.prototype.moveRight = function(){
-  if( this.posX < window.canvasWidth )
-    this.posX += 2;
+  if( this.posX < window.canvas.width )
+    this.posX += this.speed;
 }
 Lecturer.prototype.throwMic = function(){
-  window.mics.push(new Mic(window.micImage, 50, 50));
+  window.mics.push(new Mic(window.micImage, 45, 45));
 }
 
 Lecturer.prototype.draw = function(){
-  window.ctx.drawImage(this.image, 0, 0, 250, 305, this.posX, this.posY, 20, 10);
+  window.ctx.drawImage(this.image, 0, 0, 300, 500, this.posX, this.posY, this.height, this.width);
 }
